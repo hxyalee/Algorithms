@@ -18,6 +18,7 @@ var merge = function(intervals) {
         if(intervals[i][0] <= end[1]){
             if(end[1] < intervals[i][1]){
                 end[1] = intervals[i][1];
+                //  merged[merged.length - 1][1] = end[1]       
             }
         }else{
             ret.push(intervals[i])
