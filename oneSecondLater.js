@@ -4,15 +4,14 @@
 
 let func = (string) => console.log(string)
 
-let second = 1000
+let seconds = 1000
 
-let afterOneSecond = (func, second, arg) => {
-		setTimeout(func, second, arg);
-	
+let afterOneSecond = (func, seconds, arg) => {
+		setTimeout(func, seconds, arg);	
 }
 
 
-afterOneSecond(func, second, 'hello');
+afterOneSecond(func, seconds, 'hello');
 
 /*
 function myFunc(arg) {

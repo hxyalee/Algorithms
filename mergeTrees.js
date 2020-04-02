@@ -1,3 +1,4 @@
+// merge two values of a BST
 var mergeTrees = function(t1, t2) {
     if(t1 == null){
         return t2;

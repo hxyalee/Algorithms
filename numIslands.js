@@ -2,6 +2,8 @@
  * @param {character[][]} grid
  * @return {number}
  */
+// number of islands using DFS in a grid
+// islands are connected
 var numIslands = function(grid) {
     let removeIsland = (i,j) => {
         if(i < 0 || i >= grid.length || j < 0 || j >= grid[i].length || grid[i][j] == 0)

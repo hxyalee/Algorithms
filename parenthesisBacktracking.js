@@ -2,6 +2,7 @@
  * @param {number} n
  * @return {string[]}
  */
+// permutation of valid parentheses
 // backtracking
 var generateParenthesis = function(n) {
     let arr = new Array();

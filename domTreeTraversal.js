@@ -1,72 +1,60 @@
-/*
- Given a node from a DOM tree find the node in the same position from an identical DOM tree. 
-Assume:
-	input = rootA, rootB, target
-*/
-// iterative
-function getIndex(node, target){
-	// Array.from(node).indexof(target) -- valid ES6 Syntax
-	return Array.prototype.indexOf.call(node, target);
+// iterative method
+let getIndex = (list, target) =>{
+    Array.prototype.indexOf.call(list, target);
 }
 
-function getPath(root, target){
-	let current = target;
-	let path = [];
-	while(root !== current){
-		// since parentNode.childNodes is not an array (HTML NODE), use helper
-		path.unshift(current.parentNode.childNodes, current);
-		current = current.parentNode;
-	}
-	return path;
+let getPath = (root, target) => {
+    let path = new Array();
+    let curr = target;
+    while(curr != root){
+        path.unshift(getIndex(curr.parentNode.children, current));
+        curr = curr.parentNode;
+    }
+    return path;
 }
 
-function locatePath(root, path){
-	let current = root;
-	let pathLen = path.length;
-	for(let i = 0; i < pathLen; i++){
-		let currE = path[i]
-		current = current.childNodes[currE];
-	}
-	return current;
+let traverseTree = (root, path) => {
+    let curr = root;
+    let pathLen = path.length;
+    for(let i = 0; i < pathLen; i ++){
+        let currIdx = path[i];
+        curr = curr.children[currIdx]
+    }
+    return curr;
 }
 
-function getNodeSamePos(rootA, rootB, target){
-	let path = getPath(rootA, target);
-	let node = locatePath(rootB, path)
+
+let DOMDoppleGanger = (rootA, rootB, target) => {
+    let path = getPath(rootA, target);
+    return traverseTree(rootB, path);
 }
+
 
 
 // recursive
-var rootA, rootB;
 
-function findNodeB(target) {
-    // Variable to store path up the DOM tree
-    var travelPath = [];
+let DOMDoppleGangerRec = (rootA, rootB, target) => {
+    let path = new Array();
 
-    // Method to travel up the DOM tree and store path to exact node
-    var establishPath = function(travelNode) {
-        // If we have reached the top level node we want to return
-        // otherwise we travel up another level on the tree
-        if (travelNode === rootA) {
+    let getPath  = (root, target) => {
+        it(target === root){
             return;
-        } else {
-            establishPath(travelNode.parentNode);
         }
-
-        // We store the index of current child in our path
-        var index = travelNode.parentNode.childNodes.indexOf(travelNode);
-        travelPath.push(index);     
+        let idx = getIndex(target.parentNode.children, target);
+        path.unshift(idx);
+        establishPath(root, target.parentNode);
     }
 
-    var traverseTree = function(root, path) {
-        if(path.length === 0) {
+    let traverseTree = (root, path) => {
+        if(path.length === 0){
             return root;
-        } else {
-            traverseTree(root.childNodes[path.pop()], path);
+        } else{
+            traverseTree(root.children[path.unshift()], path);
         }
     }
 
-    establishPath(rootB, target);
 
-    return traverseTree(rootB, travelPath);
-} 
+
+    getPath(rootA, target);
+    return traverseTree(rootB, target)
+}

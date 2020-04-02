@@ -9,6 +9,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
+ // sum of the deepest num of the nodes;
 var deepestLeavesSum = function(root) {
     if(root == null){
         return 0;

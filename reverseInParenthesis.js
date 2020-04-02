@@ -2,6 +2,7 @@
  * @param {string} s
  * @return {string}
  */
+ // reverse strings inside the parenthesis
 var reverseParentheses = function(s) {
     let stack = new Array();
     s = s.split('');

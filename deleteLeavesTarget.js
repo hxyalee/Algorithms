@@ -10,6 +10,7 @@
  * @param {number} target
  * @return {TreeNode}
  */
+ // removing root nodes
 var removeLeafNodes = function(root, target){
     if(root == null){
         return;

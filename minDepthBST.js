@@ -1,3 +1,4 @@
+// minimum depth of a BST
 var minDepth = function(root) {
     let depth = 0
     if(root == null) {

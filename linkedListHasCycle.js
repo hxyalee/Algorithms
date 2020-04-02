@@ -15,6 +15,7 @@ var hasCycleSet = function(head) {
 };
 
 // Two pointers
+// pointerrs will meet eventually
 var hasCycle = (head) => {
     let slow = head;
     let fast = head;

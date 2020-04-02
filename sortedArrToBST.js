@@ -10,6 +10,9 @@
  * @return {TreeNode}
  */
 
+// recursively create a BST with a sorted array.
+// since BST is technically a sorted array
+// this should be easy
 var sortedArrayToBST = function(nums) {
    return helper(nums, 0, nums.length - 1)
 };

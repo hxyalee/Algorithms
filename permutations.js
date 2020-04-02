@@ -2,9 +2,9 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
+ // permutation using backtracking
 var permute = function(nums) {
   let res = [];
-
     
     let permutations = (curr, remaining) => {
         if(remaining.length === 0){

@@ -1,5 +1,7 @@
 /*
 For the given binary tree find the distance or number of hop required to move from one node to another.
+Number of hops is equal to the number of nodes in between them so we only have to get rid of the indices
+
 */
 
 

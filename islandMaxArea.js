@@ -2,6 +2,7 @@
  * @param {number[][]} grid
  * @return {number}
  */
+ // get the max area of an island of a grid
 var maxAreaOfIsland = function(grid) {
     
     let area = 0;

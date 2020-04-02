@@ -9,6 +9,12 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
+
+ // Breadth first search where I have a flag
+ // First level (root) will start at from right, then left, then right.
+ // For every level, I want to see if I'm coming from left or right
+ // then I want to append the values in normal or reverse order accordingly.
+
 var zigzagLevelOrder = function(root) {
     if(root == null){
         return [];
@@ -35,8 +41,6 @@ var zigzagLevelOrder = function(root) {
                 
             }
         }
-        
-        
         // not leaf
         if(queue.length > 0){
             if(fromLeft){

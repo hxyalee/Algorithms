@@ -5,7 +5,7 @@ class node{
 		this.next = null
 	}
 }
-
+// reverse a linkedlist
 let reverseLLIter = (head) => {
 	let curr = head;
 	let prev = null;

@@ -7,7 +7,7 @@ var minSteps = function(s, t) {
     let s1 = new Object();
     let s2 = new Object();
     let count = 0;
-    
+    // create an object of element and count of the element
     for(let i = 0; i < s.length; i++){
         if(s[i] in s1)
             s1[s[i]] ++;
@@ -21,7 +21,8 @@ var minSteps = function(s, t) {
         }else{
             s2[t[i]] = 1;
         }
-    }    
+    }
+    // get the number of changes you need for each letter in s1 for s2 to be an anagram
     for(key in s1){
         if(s1[key] <= s2[key])
             continue

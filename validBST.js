@@ -1,3 +1,5 @@
+
+// check if bst is a valid BST recursicely with a MAX MIN value
 var isValidBSTRec = function(root){
     let helper = (node, lo, hi) => {
         if(node == null){

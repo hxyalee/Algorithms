@@ -2,6 +2,7 @@ let root = document.querySelector('html');
 
 // Will return depth just for sake of testing
 // Simple BFS where all elements are just nodes.
+// Assuming that the text node is not a ndoe
 let visitAllNodes = (root) => {
 	if(root == null){
 		return 0;

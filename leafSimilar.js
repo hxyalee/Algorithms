@@ -10,6 +10,7 @@
  * @param {TreeNode} root2
  * @return {boolean}
  */
+ // check if leaves are equal in two trees using DFS since level order is buggy
 var leafSimilar = function(root1, root2) {
     if(root1 == null)
         return root2 == null
@@ -32,7 +33,6 @@ var leafSimilar = function(root1, root2) {
         
         if(node.left != null)
             stack.push(node.left);
-        
     }
     
     stack = [];
@@ -49,8 +49,5 @@ var leafSimilar = function(root1, root2) {
         if(node.left != null)
             stack.push(node.left)        
     }
-    
-    return true
-    
-    
+    return true  
 };

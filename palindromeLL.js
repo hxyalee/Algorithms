@@ -5,10 +5,9 @@
  *     this.next = null;
  * }
  */
-/**
- * @param {ListNode} head
- * @return {boolean}
- */
+
+// check if a linkedlist is a palindrome.
+// fast and slow pointer. reverse the slow pointer. see if they are equal
 var isPalindrome = function(head) {
     if(head == undefined) return true;
     let slow = head;

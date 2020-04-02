@@ -2,6 +2,10 @@
  * @param {character[][]} board
  * @return {boolean}
  */
+// iintuitive way is to perform a for loop to check 
+// row, column, and boxes.
+// However, you can use a string and set to see if the value has been 
+// seen at certain position.
 var isValidSudoku = function(board) {
     let set = new Set();
     // column

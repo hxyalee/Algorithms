@@ -9,6 +9,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
+ // BFS find mode of all nodes in the tree
 var findMode = function(root) {
     if(root == undefined){
         return [];

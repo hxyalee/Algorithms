@@ -1,3 +1,4 @@
+// use hashmap and compare using map
 var isAnagram = function(s, t) {
     let s1 = new Object();
     for(char of s){
