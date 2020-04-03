@@ -24,7 +24,7 @@ function throttle (callback, limit) {
         if (!wait) {                   // If we're not waiting
             callback.call();           // Execute users function
             wait = true;               // Prevent future invocations
-            setTimeout(function () {   // After a period of time
+            setTimeout(() => {  	   // After a period of time
                 wait = false;          // And allow future invocations
             }, limit);
         }

@@ -1,5 +1,7 @@
 // iterative method
 let getIndex = (list, target) =>{
+	Array.from(list).indexOf(target);
+
     Array.prototype.indexOf.call(list, target);
 }
 
@@ -49,12 +51,10 @@ let DOMDoppleGangerRec = (rootA, rootB, target) => {
         if(path.length === 0){
             return root;
         } else{
-            traverseTree(root.children[path.unshift()], path);
+        	let idx = path.shift()
+            traverseTree(root.children[idx], path);
         }
     }
-
-
-
     getPath(rootA, target);
     return traverseTree(rootB, target)
 }

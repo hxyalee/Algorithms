@@ -24,5 +24,6 @@ console.log('cleared timeout...', map, id)
 
 
 window.clearAllTimeout = function () {
+	
 Object.keys(map).forEach(id => clearTimeout(id))
 }

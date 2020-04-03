@@ -2,6 +2,8 @@
  * @param {number[][]} intervals
  * @return {number[][]}
  */
+
+// given time frames, merge two intervals 
 var merge = function(intervals) {
     if(intervals.length <= 1){
         return intervals;

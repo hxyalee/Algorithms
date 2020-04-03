@@ -11,6 +11,7 @@
  * @param {ListNode} headB
  * @return {ListNode}
  */
+ // find intersection of linkedlist.
 var getIntersectionNode = function(headA, headB) {
     
     let pointA = headA;

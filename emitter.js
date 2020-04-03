@@ -11,19 +11,27 @@ class EventEmitter {
       this.events[eventName].add(cb)
     }
 
-    const subManager = {
+
+    return subManager {
       unsubscribe: () => this.events[eventName].delete(cb),
     }
-    return subManager
   }
 
   emit(eventName, ...params) {
-    if (!this.events[eventName] || this.events[eventName].size === 0) {
+    if (!this.events[eventName] || Object.keys(this.events) === 0) {
       console.log(`no subscriptions to ${eventName}`)
       return
     }
+    //this.callbacks.[eventName].apply(null, params);
     this.events[eventName].forEach(cb => {
       cb(...params)
     })
   }
-}
+
+let emitter = new EventEmitter();
+
+let sub = emitter.subscribe("test", () => console.log('Hello!'));
+emitter.emit("test");
+emitter.emit("test");
+sub.unsubscribe();
+emitter.emit("test");

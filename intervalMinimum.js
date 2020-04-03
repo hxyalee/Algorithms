@@ -13,9 +13,9 @@
     i[i][0] = 1
     1 < 3? true
     count ++
-
-
 */
+// remove minimum number of intervals 
+// sort by ending time
 var eraseOverlapIntervals = function(intervals) {
     
     if(intervals.length <= 1){
