@@ -62,9 +62,9 @@ class EventEmitter {
   }
 
   subscribe(eventName, cb) {
-    if (this.events[eventName]) {
+    if (this.events.has(eventName)) {
       // case where callback exists
-      if(this.events[eventName][cb] && this.events[eventName][cb] > 0){
+      if(this.events[eventName].has(cb) && this.events[eventName][cb] > 0){
         this.events[eventName].set(cb, this.events[eventName][cb] + 1);
       // case where callback count doesnt exist so is 1
       } else{
@@ -75,17 +75,21 @@ class EventEmitter {
       this.events[eventName].set(cb, 1)
     }
     return {
-      unsubscribe: () => this.events[eventName].set(cb, this.events[eventName][cb] - 1),
+      unsubscribe: () => 
+      {
+        this.events[eventName].set(cb, this.events[eventName][cb] - 1);
+        if(this.events[eventName][cb] == 0)
+          this.events[eventName].delete(cb)
+      }
     }
   }
 
   emit(eventName, ...params) {
-    if (!this.events[eventName] || Object.keys(this.events) === 0) {
+    if (!this.events[eventName]) {
       console.log(`no subscriptions to ${eventName}`)
       return
     }
     this.events[eventName].forEach((count, cb) => {
-      console.log(cb,count)
       for(let i = 0; i < count; i++)
         cb(...params)
     })

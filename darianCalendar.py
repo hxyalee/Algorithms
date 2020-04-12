@@ -70,3 +70,4 @@ def calc_days_between(start, end):
     
 
 if __name__ == '__main__':
+    print(calc_days_between(input(), input()))
