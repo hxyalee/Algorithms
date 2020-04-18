@@ -30,7 +30,6 @@ let flatten_array = (arr) => {
 	}
 	return flatten;
 }
-flatten_array([1,2,3,[1,2],4,5,[6,[7,8,9],7]])
-let x = flatten_recursive([1,2,3,[1,2],4,5,[6,[7,8,9],7]])
+console.log(flatten_array([1,2,3,[1,2],4,5,[6,[7,8,9],7]]))
+console.log(flatten_recursive([1,2,3,[1,2],4,5,[6,[7,8,9],7]]))
 
-console.log(x)
