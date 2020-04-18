@@ -1,7 +1,6 @@
 // iterative method
 let getIndex = (list, target) =>{
-	Array.from(list).indexOf(target);
-
+	// Array.from(list).indexOf(target);
     Array.prototype.indexOf.call(list, target);
 }
 
@@ -20,7 +19,7 @@ let traverseTree = (root, path) => {
     let pathLen = path.length;
     for(let i = 0; i < pathLen; i ++){
         let currIdx = path[i];
-        curr = curr.children[currIdx]
+        curr = curr.children[currIdx];
     }
     return curr;
 }
@@ -44,7 +43,7 @@ let DOMDoppleGangerRec = (rootA, rootB, target) => {
         }
         let idx = getIndex(target.parentNode.children, target);
         path.unshift(idx);
-        establishPath(root, target.parentNode);
+        getPath(root, target.parentNode);
     }
 
     let traverseTree = (root, path) => {

@@ -12,7 +12,7 @@ class EventEmitter {
     }
 
 
-    return subManager {
+    return {
       unsubscribe: () => this.events[eventName].delete(cb),
     }
   }
