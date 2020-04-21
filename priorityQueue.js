@@ -6,6 +6,7 @@ class PriorityQueue {
 		let end = true;
 		for(let i = 0; i < this.elements.length; i++){
 			// change the sign accordingly if max/min 
+			// <= max || >= min
 			if(this.elements[i] <= item){
 				this.elements.splice(i, 0, item);
 				end = false;
@@ -22,6 +23,9 @@ class PriorityQueue {
 	}
 	rear(){
 		return this.elements[this.elements.length - 1];
+	}
+	print(){
+		console.log(this.elements)
 	}
 }
 

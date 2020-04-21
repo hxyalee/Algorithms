@@ -3,27 +3,26 @@ const originalSetTimeout = window.setTimeout
 const originalClearTimeout = window.clearTimeout
 
 
-const map = {}
+const map = new Map();
 
 
 window.setTimeout = function (callback, delay) {
 console.log('setting time out...')
 const id = originalSetTimeout(callback, delay)
-map[id] = callback
+map.set(id, callback)
 return id
 }
 
 
 window.clearTimeout = function(id) {
-if (map.hasOwnProperty(id)) {
+if (map.has(id)) {
 originalClearTimeout(id)
-delete map[id]
+map.delete(id)
 console.log('cleared timeout...', map, id)
 }
 }
 
 
 window.clearAllTimeout = function () {
-	
-Object.keys(map).forEach(id => clearTimeout(id))
+	map.clear()
 }

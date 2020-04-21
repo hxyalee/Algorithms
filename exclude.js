@@ -43,7 +43,7 @@ excludes = {
 }
 */
 
-
+// O(N)
 function convert(excludes){
 	if (excludes == null) return;
 	let mapSet = new Map();
@@ -55,23 +55,16 @@ function convert(excludes){
 			mapSet.get(excludes[i].k).add(excludes[i].v)
 		}
 	}
-	console.log(mapSet)
+	return mapSet
 }
-convert(excludes)
-/*
-excludes = new Map();
-excludes.set('color', new Set())
-excludes.set('type', new Set())
-excludes.get('color').add('silver')
-excludes.get('type').add('phone')
+excludes = convert(excludes)
+
 
 function excludeItems(items, excludes){
 	newItems = new Array();
 	items.forEach(item => {
 		let isExcluded = false;
 		for(let key in item){
-			//console.log(item, key)
-			//console.log(excludes[key])
 			if(excludes.get(key) && excludes.get(key).has(item[key])){
 				isExcluded = true;
 				break
@@ -82,32 +75,6 @@ function excludeItems(items, excludes){
 	return newItems
 }
 console.log(excludeItems(items, excludes))
-
-
-
-excludes = {
-	color:['silver'],
-	type:['phone']
-}
-
-function excludeItems(items, excludes){
-	newItems = new Array();
-	items.forEach(item => {
-		let isExcluded = false;
-		for(let key in item){
-			//console.log(item, key)
-			//console.log(excludes[key])
-			if(excludes[key] && excludes[key].indexOf(item[key]) !== -1){
-				isExcluded = true;
-				break
-			}
-		}
-		if(!isExcluded) newItems.push(item)
-	})
-	return newItems
-}
-
-*/
 
 
 
@@ -128,6 +95,12 @@ function excludeItems(items, excludes){
 
 2. What is wrong with that function? 
 	(O(N^2)) and its mutatable
+
+  a) "filter" returns anything that is true in the conditional. 
+  This is doing the opposite. 
+  (b) it's checking item[pair.v],
+  which will never return a value. It should be "item[pair.k] !== pair.v"
+
 3. How would you optimize it ?
 
 */

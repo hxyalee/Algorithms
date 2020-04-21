@@ -1,0 +1,76 @@
+/*
+	CSS Animations
+	Transform
+*/
+.elementClass{
+	/*transform: translateX(...px)		-- to the right
+				 translateY(...px)		-- to top
+				 translate(x,y)  	-- xAxis, yAxis]
+
+				 scaleX(default=1)		-- scale by x axis
+				 scaleY(default=1)		-- scale by y axis
+				 scale(default=1)		-- scale by x, y axis
+
+				 rotateX(...deg)		-- rotate according to the x axis (roasting)
+				 rotateY(...deg)		-- rotate according to y axis (roastuing)
+				 rotateZ(...deg)		-- clockwise(+) / anticlockwise(-)
+
+				 rotate(...deg) translateY(...px) scale()
+	transform-origin: acrossX, acorssY;
+	*/
+	transform: 
+}
+/* Transition -- takes 1 second */
+.someDiv{
+	/*first number is the time it takes, second is the delay*/
+	transition: /*specific element(?) e.g. background*/ 1s, /*another element*/ 2s ;
+}
+.someDiv:hover{
+	background: salmon/*differentColor*/;
+}
+/*keyframes -- define animation and which property will change*/
+.someClassName {
+	animation-name: motion;
+	animation-duration: 3s;
+	/*
+	forwards - maintain last state when animation ends]
+	backwards - maintain first state before delay
+	*/
+	animation-fill-mode: both;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+	/*
+	normal, reverse, alternate, alternate-reverse
+	*/
+	animation-direction: alternate-reverse;
+	/*
+	ease 		-- slow - fast - slow
+	linear 		-- constant speed
+	ease-in 	-- start slow
+	ease-out 	-- end slow
+	ease-in-out -- similar to ease
+	cubic-bezier(x,y,z,i)	// use online tool to get the values for the curve
+	*/
+	animation-timing-function: linear;
+	/*
+	shorthand
+	animation: <name>, <duration>, <delay>, <timing>, <iterationCount>, <direction>;
+	animation: wind, 100s, linear, infinite, reverse,
+				add another animation details here in same order;
+	*/
+}
+
+@keyframes motion{
+	/*from state x to state y*/
+	from( transform: translateX(0))
+	to( transform: franslateX(500px))
+}
+@keyframes jump{
+	0%{
+		top:-50px;
+	} 50%{ /*middle of the animation*/
+		top:-100px;
+	} 100%{
+		top:-50px;
+	}
+}

@@ -12,7 +12,7 @@ let removeIsland = (i, j, grid, isEdge) => {
     removeIsland(i - 1, j, grid, isEdge);
     removeIsland(i, j + 1, grid, isEdge);
     removeIsland(i, j - 1, grid, isEdge);
-    
+    // edge is not closed hence revert to original state
     if(i == 0 || i == grid.length - 1 || 
        j == 0 || j == grid[0].length - 1) isEdge[0] = 1;
 

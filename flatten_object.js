@@ -4,6 +4,7 @@ function flatten_object_recursive(ob){
 		// The hasOwnProperty() method returns a boolean 
 		// indicating whether the object has the specified property 
 		// as its own property (as opposed to inheriting it).
+		// in returns a boolean if the thing can be found in the obj or in prototypical chain
 		if(!ob.hasOwnProperty(key)) continue;
 
 		if (typeof(ob[key]) == 'object' && ob[key] != null){
@@ -21,7 +22,7 @@ function flatten_object_recursive(ob){
 
 function object_to_array(obj){
 	let res = Object.keys(obj).reduce((tot, key) => {
-			
+
 		return tot.concat(key ,obj[key])
 	}, [])
 	return res;

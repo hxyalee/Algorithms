@@ -1,14 +1,16 @@
 // iterative method
+/*
 let getIndex = (list, target) =>{
 	// Array.from(list).indexOf(target);
     Array.prototype.indexOf.call(list, target);
 }
-
+*/
 let getPath = (root, target) => {
     let path = new Array();
     let curr = target;
     while(curr != root){
-        path.unshift(getIndex(curr.parentNode.children, current));
+        idx = Array.from(curr.parentNode.children).indexOf(curr)
+        path.unshift(getIndex(curr.parentNode.children, curr));
         curr = curr.parentNode;
     }
     return path;
@@ -29,7 +31,6 @@ let DOMDoppleGanger = (rootA, rootB, target) => {
     let path = getPath(rootA, target);
     return traverseTree(rootB, path);
 }
-
 
 
 // recursive

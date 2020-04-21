@@ -23,5 +23,4 @@ class Solution:
                 if node.right != None:
                     queue.append(node.right)
             depth += 1
-            print(depth)
         return depth

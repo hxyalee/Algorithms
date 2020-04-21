@@ -1,4 +1,4 @@
-
+// Use debounce just to prevent the filling of the callback queue
 // Returns a function, that, as long as it continues to be invoked, will not
 // be triggered. The function will be called after it stops being called for
 // N milliseconds. If `immediate` is passed, trigger the function on the
@@ -14,9 +14,7 @@ function debounce(func, wait, immediate=false) {
     // Store the context of this and any
     // parameters passed to executedFunction
     let context = this;
-    let args = arguments;
-    console.log(context) 
-    console.log(args) 
+    let args = Array.from(arguments);
     
     // The function to be called after 
     // the debounce time has elapsed
@@ -83,5 +81,5 @@ const debounce = (func, timer) => {
 */
 
 input.addEventListener('click', debounce((e) => {
-	console.log(e); 
+	console.log(e.target); 
 }, 1000));
