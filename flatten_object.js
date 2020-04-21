@@ -33,9 +33,12 @@ let obj = {
     address: 'here',
     personal: "abc", 
     nested:{
-    	hi:'hello'
+    	hi:'hello',
+    	anotherNest:{
+    		fuckoff:'ihatenesting'
+    	}
     }
 
 }
 
-console.log(object_to_array(obj))
+console.log(flatten_object_recursive(obj))

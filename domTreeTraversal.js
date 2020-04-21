@@ -10,7 +10,7 @@ let getPath = (root, target) => {
     let curr = target;
     while(curr != root){
         idx = Array.from(curr.parentNode.children).indexOf(curr)
-        path.unshift(getIndex(curr.parentNode.children, curr));
+        path.unshift(getIndex(curr.parentNode.children, curr));   // push also works
         curr = curr.parentNode;
     }
     return path;
@@ -19,7 +19,7 @@ let getPath = (root, target) => {
 let traverseTree = (root, path) => {
     let curr = root;
     let pathLen = path.length;
-    for(let i = 0; i < pathLen; i ++){
+    for(let i = 0; i < pathLen; i ++){    // start from last index if push
         let currIdx = path[i];
         curr = curr.children[currIdx];
     }
