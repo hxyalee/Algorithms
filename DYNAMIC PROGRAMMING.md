@@ -11,8 +11,12 @@
 > *Note: Greedy method was used to solve a similar problem in the past: finding a subset with the **largest possible number** of compatible activities, but Greedy method **does not** work with this problem.*
 * Solution:
 	* Start by sorting the activities by their finishing time into a non-decreasing sequencel; and hence will assume that *f<sub>1</sub> <= f<sub>2</sub> <=  ... <= f<sub>n</sub>*
-	* For every *i<=n* solve the following subpproblems:
+	* For every *i<=n* solve the following subpproblems: <br />
 	**Subproblem** P(*i*): find a subsequence *x<sub>i</sub>* of the sequence of activities *S<sub>i</sub> = < a<sub>1</sub>, a<sub>2</sub>, ... a<sub>i</sub> >* such that:
 		1. *x<sub>i</sub>* consists of non-overlapping activities;
 		2. *x<sub>i</sub>* ends with activity a*<sub>i</sub>*;
-		3. *x<sub>i</sub>* is of maximal total duration among all subsequences of S<sub>i</sub> which satisfy 1 and 2.
+		3. *x<sub>i</sub>* is of maximal total duration among all subsequences of S<sub>i</sub> which satisfy a and b.
+	* Let T(*i*) be the total duration of the optimal solution S(*i*) of the subproblem P(*i*).
+	* For S(1), choose a<sub>1</sub>; thus, T(1) = f<sub>1</sub> - s<sub>1</sub>.
+	* **Recursion** assumingthat we have solved subproblems for all *j < i* and stored them in a table, let <br />
+	**T(*i*) = max{T(j) + f<sub>i</sub> - s<sub>i</sub> : *i < j & f<sub>j</sub> < s<sub>i</sub>*}**
