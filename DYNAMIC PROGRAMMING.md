@@ -8,5 +8,5 @@
 ## Activity Selection
 * Instance: A list of activities *a<sub>i</sub>*, *1  <= i <= n* with starting times *s<sub>i</sub>* and finishing times *f<sub>i</sub>*. No two activities can take place simultaneously.
 * Task: Find a subset of compativle activities of **maximal total duration**
-> *Note: Greedy method was used to solve a similar problem in the past: finding a subset with the **largest possible number** of compatible activities, but Greedy method **does not ** work with this problem.*
+> *Note: Greedy method was used to solve a similar problem in the past: finding a subset with the **largest possible number** of compatible activities, but Greedy method **does not** work with this problem.*
 -
