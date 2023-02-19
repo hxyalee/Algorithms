@@ -31,4 +31,31 @@ function throttle (callback, limit) {
     }
 }
 
+
+function throttle (callback, time) {
+	let shouldWait = false;
+	let waitingArguments;
+	const timeoutFunc = () => {
+		if(waitingArguments) {
+			callback(waitingArguments);
+			waitingArguments = null;
+			setTimout(timeoutFunc, time);
+		} else {
+			shouldWait = false;
+		}
+	}
+	
+	return (...args) => {
+		if(shouldWait) {
+			waitingArguments = args;
+			return
+		}
+		callback(...args);
+		shouldWait = true;
+		setTimeout(timeoutFunc, delay)		
+	}
+
+
+}
+
 input.addEventListener('click',throttle(() => console.log('clicked'), 10000))
